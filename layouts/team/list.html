@@ -1,0 +1,11 @@
+{{ define "main" }}
+
+     {{ range sort .Pages ".Params.sort" "asc" }}
+      <p><a href="{{ .Permalink }}">{{ .Title }}</a></p>
+     {{ end }}
+
+{{ end }}
+
+{{ define "footer" }}
+     footer just for sub section
+{{ end }}

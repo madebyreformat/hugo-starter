@@ -1,0 +1,26 @@
+{{ define "main" }}
+
+     <div style="max-width:960px; margin:25px auto;">
+
+
+
+          <h1>{{.Title}}</h1>
+          {{if .Params.Role}}<h2>{{.Params.Role}}</h2>{{end}}
+          {{if .Params.Dept}}<h2>{{.Params.Dept}}</h2>{{end}}
+
+          {{if .Params.Social}}
+            <ul>
+            {{range $social := .Params.Social}}
+              <li><a href="{{ $social.Url }}">{{ $social.Name }}</a></li>
+            {{end}}
+            </ul>
+          {{end}}
+
+          <article>
+            {{.Content}}
+          </article>
+
+          <!-- related content? -->
+     </div>
+
+{{ end }}
